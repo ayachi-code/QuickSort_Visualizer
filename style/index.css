@@ -6,6 +6,20 @@ body {
     justify-content: center;
 }
 
+p {
+    color: #8A6A14;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+#quicky {
+    color: #8A6A14;
+    font-weight: bold;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 60px;
+}
+
 .ioContainer button {
     height: 30px;
     background-color: #CCAA4D;
@@ -52,9 +66,10 @@ input {
 }
 
 #quick_image {
-    margin-top: 15%;
+    margin-top: 5%;
 }
 
 #message {
     color: #8A6A14;
 }
+

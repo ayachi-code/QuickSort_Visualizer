@@ -1,0 +1,50 @@
+#include <iostream>
+#include <vector>
+
+int partition (std::vector<int>& numbers, int low, int high) {
+    int middle = (low + high) / 2;
+    int p = numbers.at(middle); //pivot point
+    int m = low;
+    int n = high;
+
+    while (m < n) {
+        while (numbers.at(m) < p) {
+            m++;
+        };
+
+        while (p < numbers.at(n)) {
+            n--;
+        };
+
+        if (m < n) {
+            std::swap(numbers.at(m), numbers.at(n));
+            m++;
+            n--;
+        }
+    }
+
+    return n;
+};
+
+void quickSort (std::vector<int>& numbers, int low, int high) {
+    if (low >= high) {
+        return;
+    };
+
+    int pivotIndex = partition (numbers, low, high);
+
+    quickSort (numbers, low, pivotIndex-1);
+    quickSort (numbers, pivotIndex + 1, high);
+
+}
+
+
+int main () {
+    std::vector<int> x = {-1, -9, 32, 9, 88, 7};
+    quickSort (x, 0, x.size()-1);
+    for (int i = 0; i < x.size(); i++) {
+        std::cout << x.at(i) << std::endl;
+    }
+    
+    return 0;
+}
