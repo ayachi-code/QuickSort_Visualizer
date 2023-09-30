@@ -1,0 +1,60 @@
+body {
+    background-color: #849cdc;
+    align-items: center;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.ioContainer button {
+    height: 30px;
+    background-color: #CCAA4D;
+    border-style: solid;
+}
+
+.ioContainer button:active {
+    background-color: #849cdc;
+    transform: translateY(4px);
+  }
+
+img {
+    z-index: 1;
+    text-align: center;
+    width: 60%;
+}
+
+input {
+    text-align: center;
+    width: 40%;
+}
+
+.ioContainer {
+    text-align: center;
+    width: 30%;
+}
+
+#message {
+    font-family: Comic Sans MS;
+}
+
+#iterations {
+    border-radius: 0px;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    height: 30px;
+    font-family: Comic Sans MS;;
+
+}
+
+#iterations:focus {
+    border-color: #ecb191;
+}
+
+#quick_image {
+    margin-top: 15%;
+}
+
+#message {
+    color: #8A6A14;
+}
