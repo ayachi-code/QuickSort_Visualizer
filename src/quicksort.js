@@ -61,7 +61,6 @@ function parseInput (input) {
 };
 
 function removeDuplicates(array) { //[2,3,4,5,6,6,7]
-    debugger;
     let dedupedEllemets = [];    
     
     for (let i = 0; i < array.length; i++) {
