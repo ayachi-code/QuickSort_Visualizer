@@ -63,14 +63,15 @@ function parseInput (input) {
 
 
 document.getElementById("generate").addEventListener('click', () => {
-    let numbers = parseInput(document.getElementById("iterations").value);
-    var result = numbers.map(function (x) { 
-        return parseInt(x, 10); 
-    });
-    quickSort(result, 0, (result.length-1));
-    let output = result.toString();
-    document.getElementById("output").innerHTML = output;
-    
-    
-    console.log(numbers);
+    try {
+        let numbers = parseInput(document.getElementById("iterations").value);
+        var result = numbers.map(function (x) { 
+            return parseInt(x, 10); 
+        });
+        quickSort(result, 0, (result.length-1));
+        let output = result.toString();
+        document.getElementById("output").innerHTML = output;
+    } catch (error) {
+        document.getElementById("output").innerHTML = "Error: " + error;
+    };
 });
