@@ -44,7 +44,6 @@ function quickSort (numbers, low, high) {
 
 };
 
-
 function parseInput (input) {
     let numbers = [];
 
@@ -61,6 +60,17 @@ function parseInput (input) {
     return numbers;
 };
 
+function removeDuplicates(array) { //[2,3,4,5,6,6,7]
+    debugger;
+    let dedupedEllemets = [];    
+    
+    for (let i = 0; i < array.length; i++) {
+        if (dedupedEllemets.includes(array[i]) == false) {
+            dedupedEllemets.push(array[i]);
+        };
+    };
+    return dedupedEllemets;
+};
 
 document.getElementById("generate").addEventListener('click', () => {
     try {
@@ -68,8 +78,9 @@ document.getElementById("generate").addEventListener('click', () => {
         var result = numbers.map(function (x) { 
             return parseInt(x, 10); 
         });
-        quickSort(result, 0, (result.length-1));
-        let output = result.toString();
+        let dedup = removeDuplicates(result);
+        quickSort(dedup, 0, (dedup.length-1));
+        let output = dedup.toString();
         document.getElementById("output").innerHTML = output;
     } catch (error) {
         document.getElementById("output").innerHTML = "Error: " + error;
