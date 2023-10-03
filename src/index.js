@@ -3,6 +3,10 @@ document.getElementById("iterations").addEventListener("keyup", (event) => {
         try {
             let numbers = parseInput(document.getElementById("iterations").value);
             var result = numbers.map(function (x) { 
+                if (isNaN(parseInt(x, 10))) {
+                    console.log("Nan");
+                    throw new Error("Hey, please enter a number ;)");
+                };
                 return parseInt(x, 10); 
             });
             let dedup = removeDuplicates(result);
@@ -10,7 +14,7 @@ document.getElementById("iterations").addEventListener("keyup", (event) => {
             let output = dedup.toString();
             document.getElementById("output").innerHTML = output;
         } catch (error) {
-            document.getElementById("output").innerHTML = "Error: " + error;
+            document.getElementById("output").innerHTML = error;
         };
     };
 })

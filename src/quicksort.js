@@ -74,7 +74,11 @@ function removeDuplicates(array) { //[2,3,4,5,6,6,7]
 document.getElementById("generate").addEventListener('click', () => {
     try {
         let numbers = parseInput(document.getElementById("iterations").value);
-        var result = numbers.map(function (x) { 
+        var result = numbers.map(function (x) {
+            if (isNaN(parseInt(x, 10))) {
+                console.log("Nan");
+                throw new Error("Hey, please enter a number ;)");
+            };
             return parseInt(x, 10); 
         });
         let dedup = removeDuplicates(result);
@@ -82,6 +86,6 @@ document.getElementById("generate").addEventListener('click', () => {
         let output = dedup.toString();
         document.getElementById("output").innerHTML = output;
     } catch (error) {
-        document.getElementById("output").innerHTML = "Error: " + error;
+        document.getElementById("output").innerHTML = error;
     };
 });
